@@ -1,0 +1,19 @@
+---
+title: "Clustering"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+<h2><b>Clustering</b></h2>
+
+* K-means cluster - How do you get this done?        
+ + Specify K
+ + Assign each point to the cluster using Euclidean distance
+ + Re-compute centroid
+ + Iterate until necessary
+
+```{r}
+
+```
+
