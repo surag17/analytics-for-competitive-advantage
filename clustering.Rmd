@@ -5,6 +5,11 @@ output:
   html_notebook: default
 ---
 
+```{r}
+library(xlsx)
+```
+
+
 <h2><b>Clustering</b></h2>
 
 * K-means cluster - How do you get this done?        
@@ -14,6 +19,19 @@ output:
  + Iterate until necessary
 
 ```{r}
+utilities <- read.xlsx('Utilities.xls', sheetIndex = 1)
+utils_norm <- data.frame(Company = utilities[,1],sapply(utilities[,c(2:9)],scale))
+```
 
+```{r}
+kmeans_utils <- kmeans(utils_norm[,c(2:9)],3,100)
+```
+
+```{r}
+kmeans_utils
+```
+
+```{r}
+utilities$cluster <- kmeans_utils$cluster
 ```
 
